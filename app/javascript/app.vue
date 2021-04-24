@@ -9,7 +9,7 @@
         <input v-model="description" placeholder="詳細" class="form-control">
       </div>
       <button @click="addMemo">メモを追加</button>
-      <button @click="deleteMemo">メモを追加</button>
+
     </div>
     <div class="flex">
       <div v-for="memo in memos" :key="memo.id" class="card">
@@ -18,6 +18,7 @@
             {{ memo.title }}
           </div>
           {{ memo.description }}
+          <button @click="deleteMemo">メモを追加</button>
         </div>
       </div>
     </div>

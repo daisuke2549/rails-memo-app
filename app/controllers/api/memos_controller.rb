@@ -12,8 +12,9 @@ class Api::MemosController < ApplicationController
     end
 
     def destroy
-        memo = Memo.find(params[:id])
-        memo.destroy
+        @memo =  current_account.posts.find(params[:id])
+        @memo.destroy!
+        redirect_to posts_path(@post), notice: '削除に成功しました'
     end
 
     private
