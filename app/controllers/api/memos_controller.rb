@@ -11,6 +11,11 @@ class Api::MemosController < ApplicationController
         end
     end
 
+    def destroy
+        memo = Memo.find(params[:id])
+        memo.destroy
+    end
+
     private
       def memo_params
         params.permit(:title, :description)
